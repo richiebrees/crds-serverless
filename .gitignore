@@ -1,0 +1,9 @@
+.serverless
+output
+
+.DS_Store
+
+node_modules
+jspm_packagesload
+
+env.sh
