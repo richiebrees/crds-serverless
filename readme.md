@@ -18,6 +18,7 @@ These instructions will help ensure you have all dependencies addressed before a
 
 #### Function App
 Steps to setup the host for the Azure Function:
+
 1. Create Azure Subscription, unless you already have one | [Sign-up](https://azure.microsoft.com/en-us/free/)
 2. Sign into [Azure Portal](https://portal.azure.com)
 3. Click on the "+" button in the top left of the view
@@ -34,6 +35,7 @@ Steps to setup the host for the Azure Function:
 #### Deployment Credentials
 In order to automate the deployment, setup, and removal of the Azure Function through a REST API, the deployment credentials need to be created and prepared for use by the automation script.  
 After Azure has provisioned the Function App service, do the following:
+
 1. Go to the newly created Function App.  This can be done by searching for it by name in the search box at the top of the view
 2. Click _Function App Settings_
 3. Click _Go to App Service Settings_
@@ -77,12 +79,13 @@ Once all of the Prerequisites have been met and Configuration set, the entire te
 **test-runner.sh**
 
 The following events will occur during the script's execution:
+
 1. Set environment variables from the **env.sh** file
 2. Execute the **demo-aws-lambda.sh** script
-	1. Deploy **handler.js** function to Lambda using **Serverless**
+	1. Deploy **handler.js** function to Lambda and create endpoint in API Gateway using **Serverless**
 	2. Run a loadtest using **loadtest** npm package
 	3. Store loadtest results to the _./output_ folder
-	4. Remove function from Lambda using **Serverless**
+	4. Remove function from Lambda and endpoint from API Gateway using **Serverless**
 3. Execute the **demo-azure-functions.sh** script
 	1. Archive the folder containing the function into the _./output_ folder
 	2. Upload archive to Azure Function App using _curl_
